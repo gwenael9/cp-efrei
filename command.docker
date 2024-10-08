@@ -1,8 +1,0 @@
-----création des containers
-docker run -d --name db -e MYSQL_ROOT_PASSWORD=rootpwd cp-mysql
-
-docker run -d --name front -p 8080:80 cp-php
-docker run -d --name front -p 8080:80 --link db cp-php
-docker run -d --name front -p 8080:80 --link db -e DB_HOST=db -e DB_NAME=cp -e DB_NAME=root -e DB_PASSWORD=rootpwd -e DB_PORT=3306 -v ./www:/var/www/html cp-php
-
-docker rm -f front
